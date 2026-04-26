@@ -1,0 +1,230 @@
+/* --- 1. VARIABLES & RESETS --- */
+:root {
+    --primary: #2563eb;
+    --dark: #0f172a;
+    --text: #334155;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --glass: rgba(255, 255, 255, 0.8);
+    --shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    color: var(--text); 
+    line-height: 1.6; 
+    background: var(--light-bg); 
+    padding-top: 80px; /* Offset for sticky header */
+}
+
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+/* --- 2. NAVIGATION (STICKY) --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent; /* Initial state */
+    transition: all 0.3s ease;
+}
+
+/* Class added via JS on scroll */
+.navbar.scrolled {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.brand-identity {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.institute-name {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-links li a {
+    font-size: 0.95rem;
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--primary);
+}
+
+/* --- 3. HERO SECTION --- */
+.hero { 
+    height: 100vh; 
+    background: url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97') center/cover; 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: white;
+    margin-top: -80px; /* Pulls hero under the transparent nav */
+}
+
+.hero-overlay { 
+    position: absolute; 
+    top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(15, 23, 42, 0.7); 
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 800px; padding: 20px; }
+
+.hero h1 { 
+    font-size: 3.5rem; 
+    margin-bottom: 20px; 
+    line-height: 1.2;
+}
+
+/* --- 4. COURSES & GRIDS --- */
+section { padding: 80px 0; }
+
+.section-title { 
+    text-align: center; 
+    margin-bottom: 50px; 
+    font-size: 2.5rem; 
+    color: var(--dark);
+}
+
+.course-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px; 
+}
+
+.course-card { 
+    background: var(--white); 
+    padding: 40px; 
+    border-radius: 20px; 
+    box-shadow: var(--shadow); 
+    transition: 0.3s; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.course-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+}
+
+.featured-badge { 
+    position: absolute; 
+    top: 15px; right: -30px; 
+    background: #fbbf24; 
+    color: black; 
+    font-size: 10px; 
+    font-weight: bold; 
+    padding: 5px 40px; 
+    transform: rotate(45deg); 
+}
+
+/* --- 5. FOOTER SECTION --- */
+.main-footer {
+    background: var(--white);
+    padding: 60px 0 20px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-brand { flex: 1; min-width: 250px; }
+
+.footer-logo { height: 50px; margin-bottom: 15px; }
+
+.social-icons { display: flex; gap: 12px; }
+
+.icon {
+    width: 40px; height: 40px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold; font-size: 12px; color: white;
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+
+/* Brand Colors */
+.facebook { background: #1877F2; }
+.instagram { background: linear-gradient(45deg, #f09433, #dc2743, #bc1888); }
+.tiktok, .twitter { background: #000; }
+.linkedin { background: #0077b5; }
+.whatsapp { background: #25D366; }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+    font-size: 13px;
+    color: #94a3b8;
+}
+
+/* --- 6. MOBILE OPTIMIZATION --- */
+@media (max-width: 992px) {
+    .course-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    body { padding-bottom: 60px; }
+    .hero h1 { font-size: 2.2rem; }
+    .course-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; } /* Hide for burger menu implementation later */
+    
+    .mobile-footer {
+        position: fixed; bottom: 0; width: 100%; display: flex; height: 60px; z-index: 2000;
+    }
+    
+    .footer-btn { 
+        flex: 1; display: flex; align-items: center; justify-content: center; 
+        text-decoration: none; font-weight: 600; color: white; 
+    }
+}

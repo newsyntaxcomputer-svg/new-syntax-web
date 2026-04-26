@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Syllabus | New Syntax Institute</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e293b;
+            --light: #f8fafc;
+        }
+        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--secondary); line-height: 1.6; padding: 20px; }
+        .syllabus-container { max-width: 900px; margin: 40px auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        h1 { text-align: center; color: var(--primary); margin-bottom: 10px; }
+        .subtitle { text-align: center; margin-bottom: 40px; opacity: 0.8; }
+        
+        /* SYLLABUS ACCORDION */
+        details { border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 15px; padding: 15px; transition: 0.3s; }
+        details[open] { border-color: var(--primary); box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1); }
+        summary { font-weight: 700; font-size: 1.1rem; cursor: pointer; outline: none; display: flex; align-items: center; }
+        summary::marker { color: var(--primary); }
+        
+        .module-list { padding: 15px 0 0 20px; }
+        .module-list li { margin-bottom: 8px; position: relative; list-style: square; color: #475569; }
+        
+        .badge { background: #dbeafe; color: var(--primary); font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; margin-left: 10px; }
+
+        @media (max-width: 600px) {
+            .syllabus-container { padding: 15px; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="syllabus-container">
+    <h1>Advanced Course Syllabus</h1>
+    <p class="subtitle">Industry-standard curriculum for professional growth</p>
+
+    <details open>
+        <summary>📊 Advanced Excel & Data Analytics <span class="badge">1 Month</span></summary>
+        <div class="module-list">
+            <ul>
+                <li><strong>Logic Building:</strong> Advanced IF, Nested IF, AND/OR functions.</li>
+                <li><strong>Data Visualization:</strong> Pivot Tables, Slicers, and Professional Dashboards.</li>
+                <li><strong>Lookup Functions:</strong> VLOOKUP, HLOOKUP, INDEX & MATCH.</li>
+                <li><strong>Automation:</strong> Intro to Macros and VBA basics.</li>
+                <li><strong>Financial Tools:</strong> Goal Seek, Scenario Manager, and Data Validation.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary>🎨 Professional Graphic Design <span class="badge">3 Months</span></summary>
+        <div class="module-list">
+            <ul>
+                <li><strong>Adobe Photoshop:</strong> Photo manipulation, masking, and retouching.</li>
+                <li><strong>Adobe Illustrator:</strong> Vector design, logo creation, and typography.</li>
+                <li><strong>InDesign:</strong> Layout design for magazines and brochures.</li>
+                <li><strong>UI/UX Basics:</strong> Designing user-friendly interfaces for mobile apps.</li>
+                <li><strong>Portfolio Building:</strong> Creating a professional Behance/Dribbble profile.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary>🛠️ Hardware & Computer Networking <span class="badge">2 Months</span></summary>
+        <div class="module-list">
+            <ul>
+                <li><strong>PC Assembly:</strong> Identifying and installing internal components.</li>
+                <li><strong>OS Installation:</strong> Windows/Linux setup, formatting, and drivers.</li>
+                <li><strong>Troubleshooting:</strong> System repair, virus removal, and BIOS settings.</li>
+                <li><strong>Networking:</strong> IP Addressing, Router configuration, and LAN setup.</li>
+                <li><strong>CCTV Installation:</strong> Basics of security camera setup and DVR/NVR.</li>
+            </ul>
+        </div>
+    </details>
+
+    <details>
+        <summary>📈 Accounting Package (Tally Prime) <span class="badge">1.5 Months</span></summary>
+        <div class="module-list">
+            <ul>
+                <li><strong>Company Creation:</strong> Ledger management and group accounts.</li>
+                <li><strong>Inventory:</strong> Stock groups, units of measure, and Godown management.</li>
+                <li><strong>Taxation:</strong> VAT, TDS, and GST (as per Nepal's regulations).</li>
+                <li><strong>Reporting:</strong> Balance sheets, P&L accounts, and Daybooks.</li>
+            </ul>
+        </div>
+    </details>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <a href="tel:+9779841745371" style="background: var(--primary); color: white; padding: 12px 30px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block;">
+            Download Full PDF Syllabus
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
