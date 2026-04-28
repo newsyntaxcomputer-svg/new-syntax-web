@@ -294,40 +294,38 @@ function sendToWhatsApp(event) {
             </div>
         </section>
     </main>
-
-    <footer class="main-footer">
+<footer class="main-footer">
         <div class="container footer-content">
             <div>
                 <h3>NEW SYNTAX INSTITUTE</h3>
-                <p>Empowering the next generation of IT professionals through quality education and practical skills.</p>
+                <p>Empowering the next generation of IT professionals.</p>
             </div>
-            <div>
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#about">About Us</a></li>
-                    <li><a href="#courses">Our Courses</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3>Connect</h3>
-                <div class="social-icons">
-                    <a href="#">FB</a>
-                    <a href="#">IG</a>
-                    <a href="#">TK</a>
-                    <a href="https://wa.me/9779841745371">WA</a>
-                </div>
+            <div class="social-icons">
+                <a href="#">FB</a>
+                <a href="#">IG</a>
+                <a href="https://wa.me/9779841745371">WA</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 New Syntax Institute. Built for Excellence.</p>
+            <p>© 2026 New Syntax Institute.</p>
         </div>
-		
     </footer>
+
     <div class="mobile-footer">
         <a href="https://wa.me/9779841745371" class="footer-btn whatsapp">WhatsApp</a>
         <a href="tel:+9779841745371" class="footer-btn call">Call Now</a>
     </div>
 
+    <script>
+    function sendToWhatsApp(event) {
+        event.preventDefault();
+        const myNumber = "9779841745371";
+        const name = document.getElementById('studentName').value;
+        const phone = document.getElementById('studentPhone').value;
+        const course = document.getElementById('courseName').value;
+        const text = `*New Admission Inquiry*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Course:* ${course}`;
+        window.open(`https://wa.me/${myNumber}?text=${text}`, '_blank').focus();
+    }
+    </script>
 </body>
 </html>
