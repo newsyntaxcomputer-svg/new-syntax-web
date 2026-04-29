@@ -60,6 +60,50 @@
         .nav-links a:hover { color: var(--primary); }
         .cta-nav { background: var(--primary); color: white !important; padding: 10px 20px; border-radius: 5px; font-weight: 600; }
 
+        /* HAMBURGER BUTTON STYLING */
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--secondary);
+    transition: 0.3s;
+}
+
+/* MOBILE MEDIA QUERY UPDATES */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide default menu */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* This class will be added via JavaScript */
+    .nav-links.active {
+        display: flex;
+    }
+}
         /* HERO SECTION */
         .hero { 
             height: 80vh; 
@@ -106,22 +150,27 @@
 <body>
 
     <nav class="navbar">
-        <div class="container navbar-inner">
-            <a href="/" class="brand-identity">
-                <img src="logo.png" alt="New Syntax Institute Logo - Samakhushi Kathmandu" class="logo-img">
-                <span>NEW SYNTAX</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="tel:+9779841745371" class="cta-nav">Enroll Now</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="container navbar-inner">
+        <a href="/" class="brand-identity">
+            <img src="logo.png" alt="New Syntax Institute Logo" class="logo-img">
+            <span>NEW SYNTAX</span>
+        </a>
+        
+        <button class="menu-toggle" id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="tel:+9779841745371" class="cta-nav">Enroll Now</a></li>
+        </ul>
+    </div>
+</nav>
     <header class="hero">
         <div class="container hero-content">
             <h1>Expert Computer Training in Kathmandu</h1>
@@ -249,5 +298,20 @@
         window.open(`https://wa.me/${myNumber}?text=${text}`, '_blank').focus();
     }
     </script>
+    <script>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
 </body>
 </html>
